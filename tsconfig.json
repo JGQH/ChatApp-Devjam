@@ -19,7 +19,8 @@
     "paths": {
       "@Components/*":[
         "components/TextBox/*",
-        "components/LoginScreen/*"
+        "components/LoginScreen/*",
+        "components/Header/*"
       ],
       "@Elements/*":[
         "elements/Button/*",

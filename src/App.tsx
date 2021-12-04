@@ -3,6 +3,7 @@ import TextBox from '@Components/TextBox'
 import LoginScreen from '@Components/LoginScreen'
 import useGUN, { GUNProvider } from '@Hooks/useGUN'
 import styles from './App.module.scss'
+import Header from '@Components/Header'
 
 function RealApp() {
   const { username } = useGUN()
@@ -11,7 +12,7 @@ function RealApp() {
     <div className={styles.container}>
       {username ?
       <>
-        { username }
+        <Header />
         <TextBox />
       </>
       :

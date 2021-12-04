@@ -27,6 +27,5 @@ For more information, here is a [short video](https://www.youtube.com/watch?v=oT
 
 ## To-Do
 - Chat interface
-- User handling
 - Actual messaging
 - Styling messages

@@ -1,0 +1,26 @@
+.container {
+  background: var(--bg-low);
+
+  display: flex;
+  flex-direction: row;
+
+  button {
+    padding: .5rem;
+    cursor: pointer;
+    color: white;
+    aspect-ratio: 1;
+    background: none;
+    border: none;
+
+    transition: all .25s;
+    &:hover{
+      background-color: var(--bg-lwr);
+    }
+  }
+
+  .username {
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+  }
+}

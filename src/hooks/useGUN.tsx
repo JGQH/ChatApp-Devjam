@@ -54,6 +54,7 @@ export function GUNProvider({ children }:{ children:ReactNode }) {
 
   function signOut() {
     auth.logout()
+    setUsername(undefined)
   }
 
   useEffect(() => {

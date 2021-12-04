@@ -1,28 +1,35 @@
 .container {
-  margin: 0 auto;
-  width: 75%;
-
-  h1 {
+  .title {
+    background-color: var(--bg-low);
     text-align: center;
-  }
 
-  .inputField {
-    padding: 1rem;
-
-    input {
-      width: 100%;
-      margin: 1rem 0;
+    h1 {
+      padding: 1rem;
     }
   }
 
-  .errorField {
-    padding: 1rem;
-    text-align: center;
-    font-style: italic;
-  }
+  .form {
+    margin: 0 auto;
+    width: 75%;
 
-  .buttonField {
-    display: flex;
-    justify-content: space-around;
+    .inputField {
+      padding: 1rem;
+  
+      input {
+        width: 100%;
+        margin: 1rem 0;
+      }
+    }
+  
+    .errorField {
+      padding: 1rem;
+      text-align: center;
+      font-style: italic;
+    }
+  
+    .buttonField {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 }
