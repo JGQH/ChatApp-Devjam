@@ -18,7 +18,8 @@
     "baseUrl": "./src/",
     "paths": {
       "@Components/*":[
-        "components/TextBox/*"
+        "components/TextBox/*",
+        "components/LoginScreen/*"
       ],
       "@Elements/*":[
         "elements/Button/*",
