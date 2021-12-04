@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  gap: 1rem;
+
+  input, button {
+    color: white;
+    padding: 1rem;
+    background: var(--bg-hgh);
+    border: none;
+    border-radius: 1rem;
+
+    transition: all .25s;
+  }
+
+  input {
+    flex: 1 0;
+    outline: 1px solid var(--bg-hgh);
+    outline-offset: -1px;
+
+    &:focus {
+      outline-offset: .25rem;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    flex: 0 1;
+
+    &:disabled {
+      cursor: not-allowed;
+      color: grey;
+      background: var(--bg-low);
+    }
+  }
+}

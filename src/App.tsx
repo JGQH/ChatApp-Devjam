@@ -1,8 +1,12 @@
 import React from 'react'
+import TextBox from '@Components/TextBox'
+import styles from './App.module.scss'
 
 export default function App() {
 
   return (
-    <p>Hello World</p>
+    <div className={styles.container}>
+      <TextBox />
+    </div>
   )
 }
