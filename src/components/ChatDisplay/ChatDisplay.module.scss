@@ -1,3 +1,25 @@
 .container {
   flex: 1 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: auto;
+
+  .message {
+    padding: 1rem;
+    transition: all .25s;
+
+    .identifier {
+      overflow-x: hidden;
+
+      & > * {
+        display: inline;
+      }
+    }
+
+    &:hover {
+      background-color: var(--bg-low);
+    }
+  }
 }

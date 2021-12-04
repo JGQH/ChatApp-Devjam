@@ -26,4 +26,3 @@ For more information, here is a [short video](https://www.youtube.com/watch?v=oT
 *\*No illustrations yet, WIP\**
 
 ## To-Do
-- Styling messages
