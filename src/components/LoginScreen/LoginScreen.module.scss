@@ -15,6 +15,12 @@
     }
   }
 
+  .errorField {
+    padding: 1rem;
+    text-align: center;
+    font-style: italic;
+  }
+
   .buttonField {
     display: flex;
     justify-content: space-around;

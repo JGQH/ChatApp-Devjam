@@ -24,6 +24,12 @@
       "@Elements/*":[
         "elements/Button/*",
         "elements/Input/*"
+      ],
+      "@Library/*":[
+        "lib/*"
+      ],
+      "@Hooks/*":[
+        "hooks/*"
       ]
     }
   },

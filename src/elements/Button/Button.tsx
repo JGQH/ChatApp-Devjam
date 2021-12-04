@@ -1,7 +1,7 @@
-import React, { HTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import style from './Button.module.scss'
 
-interface ButtonProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'className'> {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   className?: string[]
 }
 
