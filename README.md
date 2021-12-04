@@ -23,6 +23,7 @@ It aims to create a chat app where users can interact with each other in realtim
 *\*No illustrations yet, WIP\**
 
 ## To-Do
+- Login Screen
 - Chat interface
 - User handling
 - Actual messaging

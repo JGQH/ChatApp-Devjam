@@ -1,0 +1,16 @@
+.element {
+  cursor: pointer;
+  color: white;
+  padding: 1rem;
+  background: var(--bg-hgh);
+  border: none;
+  border-radius: 1rem;
+
+  transition: all .25s;
+  
+  &:disabled {
+    cursor: not-allowed;
+    color: grey;
+    background: var(--bg-low);
+  }
+}

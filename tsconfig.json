@@ -19,6 +19,10 @@
     "paths": {
       "@Components/*":[
         "components/TextBox/*"
+      ],
+      "@Elements/*":[
+        "elements/Button/*",
+        "elements/Input/*"
       ]
     }
   },

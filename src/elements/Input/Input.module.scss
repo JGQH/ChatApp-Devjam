@@ -1,0 +1,15 @@
+.element {
+  color: white;
+  padding: 1rem;
+  background: var(--bg-hgh);
+  border: none;
+  border-radius: 1rem;
+  outline: 1px solid var(--bg-hgh);
+  outline-offset: -1px;
+
+  transition: all .25s;
+
+  &:focus {
+    outline-offset: .25rem;
+  }
+}
