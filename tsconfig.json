@@ -20,7 +20,8 @@
       "@Components/*":[
         "components/TextBox/*",
         "components/LoginScreen/*",
-        "components/Header/*"
+        "components/Header/*",
+        "components/ChadDisplay/*"
       ],
       "@Elements/*":[
         "elements/Button/*",

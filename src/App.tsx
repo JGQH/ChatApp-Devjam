@@ -4,6 +4,7 @@ import LoginScreen from '@Components/LoginScreen'
 import useGUN, { GUNProvider } from '@Hooks/useGUN'
 import styles from './App.module.scss'
 import Header from '@Components/Header'
+import ChatDisplay from 'components/ChatDisplay/ChatDisplay'
 
 function RealApp() {
   const { username } = useGUN()
@@ -13,6 +14,7 @@ function RealApp() {
       {username ?
       <>
         <Header />
+        <ChatDisplay />
         <TextBox />
       </>
       :
