@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Bottomer from '@Components/Bottomer'
 import useGUN from '@Hooks/useGUN'
 import GUN, { SEA } from 'gun'
 import ChatMessage, { MessageInterface } from './ChatMessage'
@@ -38,6 +39,7 @@ export default function ChatDisplay() {
 
         return <ChatMessage {...{...message, isUser, key}}/>
       })}
+      <Bottomer />
     </div>
   )
 }

@@ -1,0 +1,29 @@
+.sender {
+  position: sticky;
+  bottom: 0;
+
+  button {
+    cursor: pointer;
+    position: absolute;
+    background: var(--bg-low);
+
+    border: none;
+    color: white;
+    
+    padding: 1rem;
+    border-radius: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+
+    transition: all .25s;
+    &:hover {
+      background: var(--bg-lwr);
+    }
+  }
+
+  transition: all .25s;
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

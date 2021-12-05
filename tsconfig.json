@@ -21,7 +21,8 @@
         "components/TextBox/*",
         "components/LoginScreen/*",
         "components/Header/*",
-        "components/ChatDisplay/*"
+        "components/ChatDisplay/*",
+        "components/Bottomer/*"
       ],
       "@Elements/*":[
         "elements/Button/*",
