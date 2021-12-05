@@ -4,7 +4,7 @@ import LoginScreen from '@Components/LoginScreen'
 import useGUN, { GUNProvider } from '@Hooks/useGUN'
 import styles from './App.module.scss'
 import Header from '@Components/Header'
-import ChatDisplay from 'components/ChatDisplay/ChatDisplay'
+import ChatDisplay from '@Components/ChatDisplay'
 
 function RealApp() {
   const { username } = useGUN()
