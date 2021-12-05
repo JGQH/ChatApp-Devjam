@@ -9,7 +9,7 @@ interface ChatAppInterface {
   username: string | undefined
   state: ChatAuthState
   signUp: (alias:string, pass:string) => void
-  signIn: (alias:string, pass:string) => void
+  signIn: (alias:string, pass:string) => Promise<void>
   signOut:() => void
 }
 
@@ -40,16 +40,28 @@ export function GUNProvider({ children }:{ children:ReactNode }) {
       })
   }
 
-  function signIn(alias:string, pass:string) {
+  async function signIn(alias:string, pass:string) {
     setState({ loading: true })
 
-    auth.login({ alias, pass })
-      .then(() => {
-        setState({ loading: false })  
-      })
-      .catch(e => {
-        setState({ loading: false, error: (e as Error).message })  
-      })
+    // This is just a silly way to fix auth error, where it only works after the third attempt
+    // But t is absolutely beyond my power, so this is the only thing I could think of
+    // If it actually takes more than those 3 tries, then just throw an error
+
+    let attempts = 0
+
+    while (attempts < 3) {
+      try {
+        await auth.login({ alias, pass })
+        setState({ loading: false }) 
+        break
+      } catch (e) {
+        attempts += 1
+
+        if(attempts === 3) {
+          setState({ loading: false, error: (e as Error).message })
+        }
+      }
+    }
   }
 
   function signOut() {
