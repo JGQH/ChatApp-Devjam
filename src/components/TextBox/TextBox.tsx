@@ -23,7 +23,7 @@ export default function TextBox() {
 
   return (
     <div className={styles.container}>
-      <Input type='text' placeholder='Type your message here...' onChange={e => setContent(e.target.value)} value={plainContent} />
+      <Input type='text' placeholder='Type your message here...' onChange={e => setContent(e.target.value)} value={plainContent} onEnter={sendMessage} />
       <Button onClick={sendMessage} disabled={plainContent.length === 0}>Send</Button>
     </div>
   )
