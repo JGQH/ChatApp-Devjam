@@ -1,6 +1,6 @@
 
 import React, { ReactNode, createContext, useContext, useState, useEffect } from 'react'
-import { db, user, auth } from '@Library/GUNAuth'
+import { db, auth } from '@Library/GUNAuth'
 import type { IGunChainReference } from 'gun/types/chain'
 
 interface ChatAppInterface {
@@ -13,32 +13,15 @@ interface ChatAppInterface {
   signOut:() => void
 }
 
-const ChatAppContext = createContext({} as ChatAppInterface)
-
-export default function useGUN() {
-  return useContext(ChatAppContext)
-}
-
 type ChatAuthState = {
   loading: boolean
   error?: string
 }
 
-export function GUNProvider({ children }:{ children:ReactNode }) {
+function useGUNProvider(): ChatAppInterface {
+  const user = db.user().recall({ sessionStorage: true })
   const [ username, setUsername ] = useState<string | undefined>(undefined)
   const [ state, setState ] = useState<ChatAuthState>({ loading: false })
-
-  function signUp(alias:string, pass:string) {
-    setState({ loading: true })
-
-    auth.create({ alias, pass })
-      .then(() => {
-        setState({ loading: false })  
-      })
-      .catch(e => {
-        setState({ loading: false, error: (e as Error).message })  
-      })
-  }
 
   async function signIn(alias:string, pass:string) {
     setState({ loading: true })
@@ -64,28 +47,53 @@ export function GUNProvider({ children }:{ children:ReactNode }) {
     }
   }
 
+  function signUp(alias:string, pass:string) {
+    setState({ loading: true })
+
+    auth.create({ alias, pass })
+      .then(() => {
+        setState({ loading: false })
+        signIn(alias, pass)
+      })
+      .catch(e => {
+        setState({ loading: false, error: (e as Error).message })  
+      })
+  }
+
   function signOut() {
     auth.logout()
     setUsername(undefined)
   }
 
   useEffect(() => {
-    auth.on(() => {
-      const newUser = auth.user() as IGunChainReference
-      
+    //@ts-ignore
+    db.on('auth', async () => {
       //@ts-ignore
-      newUser.get('alias').once(d => setUsername(d)) //Documentation indicates that it will return the value asked for, and 'alias' is just a string, so this actually works
+      const alias:string = await user.get('alias') //Documentation indicates that it will return the value asked for, and 'alias' is just a string, so this actually works
+
+      setUsername(alias)
     })
 
-    return () => {
-      //@ts-ignore
-      auth.off() //Property actually exists and prevents previous 'on' from running more than once (Think of it as an event listener)
-    }
+    return () => db.off()
   }, [])
 
+  return { db, user, username, state, signUp, signIn, signOut }
+}
+
+// Handling of context
+
+const ChatAppContext = createContext({} as ChatAppInterface)
+
+export function GUNProvider({ children }:{ children:ReactNode }) {
+  const gun = useGUNProvider()
+
   return (
-    <ChatAppContext.Provider value={{ db, user, username, state, signUp, signIn, signOut }}>
+    <ChatAppContext.Provider value={gun}>
       {children}
     </ChatAppContext.Provider>
   )
+}
+
+export default function useGUN() {
+  return useContext(ChatAppContext)
 }
