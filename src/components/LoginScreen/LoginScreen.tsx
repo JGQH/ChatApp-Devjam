@@ -18,11 +18,18 @@ export default function LoginScreen() {
       <div className={style.form}>
         <div className={style.inputField}>
           <p>Username:</p>
-          <Input type='text' placeholder='Example: Devjam' onChange={e => setEntry('alias', e.target.value)} />
+          <Input
+            type='text'
+            placeholder='Example: Devjam'
+            onChange={e => setEntry('alias', e.target.value)}
+            maxLength={15} />
         </div>
         <div className={style.inputField}>
           <p>Password:</p>
-          <Input type='password' placeholder='Example: Devjam-App' onChange={e => setEntry('pass', e.target.value)} />
+          <Input
+            type='password'
+            placeholder='Example: Devjam-App'
+            onChange={e => setEntry('pass', e.target.value)} />
         </div>
         
         <div className={style.buttonField}>
