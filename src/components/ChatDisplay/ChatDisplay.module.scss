@@ -22,3 +22,21 @@
     }
   }
 }
+
+.error {
+  padding: 1rem;
+  border-radius: 1rem 1rem 0 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background-color: #2626FA;
+
+  button {
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: inherit;
+  }
+}
