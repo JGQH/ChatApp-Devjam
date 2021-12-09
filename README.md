@@ -20,9 +20,13 @@ For more information, here is a [short video](https://www.youtube.com/watch?v=oT
 - SASS v1.44.0
 - TypeScript v4.3.2
 - GUN v0.2020.1235
+- GUN-UTIL v0.0.17
 ##### \*Data can be found in **package.json** file
 
 ## Illustrations
-*\*No illustrations yet, WIP\**
+
+<div style="text-align:center;">
+  <img src="./readme/readme.png" alt="Chat" />
+</div>
 
 ## To-Do
